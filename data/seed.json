@@ -1,0 +1,483 @@
+{
+  "equipment": [
+    {
+      "id": "PC-01",
+      "label": "Computer 1",
+      "lab": "Lab 1"
+    },
+    {
+      "id": "PC-02",
+      "label": "Computer 2",
+      "lab": "Lab 1"
+    },
+    {
+      "id": "PC-03",
+      "label": "Computer 3",
+      "lab": "Lab 1"
+    },
+    {
+      "id": "PC-04",
+      "label": "Computer 4",
+      "lab": "Lab 1"
+    },
+    {
+      "id": "PC-05",
+      "label": "Computer 5",
+      "lab": "Lab 1"
+    },
+    {
+      "id": "PC-06",
+      "label": "Computer 6",
+      "lab": "Lab 1"
+    },
+    {
+      "id": "PC-07",
+      "label": "Computer 7",
+      "lab": "Lab 1"
+    },
+    {
+      "id": "PC-08",
+      "label": "Computer 8",
+      "lab": "Lab 1"
+    },
+    {
+      "id": "PC-09",
+      "label": "Computer 9",
+      "lab": "Lab 2"
+    },
+    {
+      "id": "PC-10",
+      "label": "Computer 10",
+      "lab": "Lab 2"
+    },
+    {
+      "id": "PC-11",
+      "label": "Computer 11",
+      "lab": "Lab 2"
+    },
+    {
+      "id": "PC-12",
+      "label": "Computer 12",
+      "lab": "Lab 2"
+    },
+    {
+      "id": "PC-13",
+      "label": "Computer 13",
+      "lab": "Lab 2"
+    },
+    {
+      "id": "PC-14",
+      "label": "Computer 14",
+      "lab": "Lab 2"
+    },
+    {
+      "id": "PC-15",
+      "label": "Computer 15",
+      "lab": "Lab 2"
+    },
+    {
+      "id": "PJ-01",
+      "label": "Projector 1",
+      "lab": "Lab 1"
+    },
+    {
+      "id": "PJ-02",
+      "label": "Projector 2",
+      "lab": "Lab 2"
+    }
+  ],
+  "technicians": [
+    {
+      "id": "TECH-01",
+      "name": "Aarav",
+      "skills": [
+        "network"
+      ],
+      "available": true,
+      "capacity": 8
+    },
+    {
+      "id": "TECH-02",
+      "name": "Meera",
+      "skills": [
+        "display",
+        "hardware"
+      ],
+      "available": true,
+      "capacity": 8
+    },
+    {
+      "id": "TECH-03",
+      "name": "Kabir",
+      "skills": [
+        "software"
+      ],
+      "available": true,
+      "capacity": 8
+    },
+    {
+      "id": "TECH-04",
+      "name": "Nisha",
+      "skills": [
+        "network",
+        "hardware"
+      ],
+      "available": false,
+      "capacity": 8
+    }
+  ],
+  "knowledge": [
+    {
+      "category": "network",
+      "id": "KB-N01",
+      "title": "Device network checks",
+      "steps": [
+        "Check whether the network cable is visibly connected.",
+        "Record the displayed network error and report it to the technician."
+      ]
+    },
+    {
+      "category": "network",
+      "id": "KB-N02",
+      "title": "Possible lab network incident",
+      "steps": [
+        "Ask whether other devices in the same lab are affected.",
+        "Refer router and switch changes to the network technician."
+      ]
+    },
+    {
+      "category": "display",
+      "id": "KB-D01",
+      "title": "Projector checks",
+      "steps": [
+        "Check that the projector is powered on.",
+        "Check the selected input source and visible display cable connection."
+      ]
+    },
+    {
+      "category": "display",
+      "id": "KB-D02",
+      "title": "Display evidence",
+      "steps": [
+        "Record any error message or indicator light for the technician."
+      ]
+    },
+    {
+      "category": "software",
+      "id": "KB-S01",
+      "title": "Missing software",
+      "steps": [
+        "Record the application name and required version.",
+        "Ask the software technician to use the institution-approved installer."
+      ]
+    },
+    {
+      "category": "software",
+      "id": "KB-S02",
+      "title": "Application errors",
+      "steps": [
+        "Record the exact error message and the action that triggered it."
+      ]
+    },
+    {
+      "category": "hardware",
+      "id": "KB-H01",
+      "title": "Peripheral check",
+      "steps": [
+        "Record which keyboard or mouse is affected and whether its cable is visibly connected."
+      ]
+    },
+    {
+      "category": "hardware",
+      "id": "KB-H02",
+      "title": "Power issue",
+      "steps": [
+        "Record the power indicator state.",
+        "Refer power-supply or internal component work to the technician."
+      ]
+    }
+  ],
+  "tickets": [
+    {
+      "id": "LF-001",
+      "lab": "Lab 1",
+      "equipment": "PC-01",
+      "category": "network",
+      "description": "Synthetic network issue on PC-01",
+      "priority": "Medium",
+      "kind": "ticket",
+      "related_ids": [],
+      "technician_id": "TECH-01",
+      "status": "Open",
+      "reports": 1,
+      "created_at": "2026-10-13T09:00:00+00:00"
+    },
+    {
+      "id": "LF-002",
+      "lab": "Lab 1",
+      "equipment": "PC-02",
+      "category": "network",
+      "description": "Synthetic network issue on PC-02",
+      "priority": "Medium",
+      "kind": "ticket",
+      "related_ids": [],
+      "technician_id": "TECH-01",
+      "status": "Open",
+      "reports": 1,
+      "created_at": "2026-10-13T09:00:00+00:00"
+    },
+    {
+      "id": "LF-003",
+      "lab": "Lab 1",
+      "equipment": "PC-03",
+      "category": "software",
+      "description": "Synthetic software issue on PC-03",
+      "priority": "Medium",
+      "kind": "ticket",
+      "related_ids": [],
+      "technician_id": "TECH-03",
+      "status": "Open",
+      "reports": 1,
+      "created_at": "2026-10-13T09:00:00+00:00"
+    },
+    {
+      "id": "LF-004",
+      "lab": "Lab 1",
+      "equipment": "PC-04",
+      "category": "hardware",
+      "description": "Synthetic hardware issue on PC-04",
+      "priority": "Medium",
+      "kind": "ticket",
+      "related_ids": [],
+      "technician_id": "TECH-02",
+      "status": "Open",
+      "reports": 1,
+      "created_at": "2026-10-13T09:00:00+00:00"
+    },
+    {
+      "id": "LF-005",
+      "lab": "Lab 1",
+      "equipment": "PC-05",
+      "category": "display",
+      "description": "Synthetic display issue on PC-05",
+      "priority": "Medium",
+      "kind": "ticket",
+      "related_ids": [],
+      "technician_id": "TECH-02",
+      "status": "Resolved",
+      "reports": 1,
+      "created_at": "2026-10-13T09:00:00+00:00"
+    },
+    {
+      "id": "LF-006",
+      "lab": "Lab 1",
+      "equipment": "PC-06",
+      "category": "network",
+      "description": "Synthetic network issue on PC-06",
+      "priority": "Medium",
+      "kind": "ticket",
+      "related_ids": [],
+      "technician_id": "TECH-01",
+      "status": "Resolved",
+      "reports": 1,
+      "created_at": "2026-10-13T09:00:00+00:00"
+    },
+    {
+      "id": "LF-007",
+      "lab": "Lab 1",
+      "equipment": "PC-07",
+      "category": "network",
+      "description": "Synthetic network issue on PC-07",
+      "priority": "Medium",
+      "kind": "ticket",
+      "related_ids": [],
+      "technician_id": "TECH-01",
+      "status": "Resolved",
+      "reports": 1,
+      "created_at": "2026-10-13T09:00:00+00:00"
+    },
+    {
+      "id": "LF-008",
+      "lab": "Lab 1",
+      "equipment": "PC-08",
+      "category": "software",
+      "description": "Synthetic software issue on PC-08",
+      "priority": "Medium",
+      "kind": "ticket",
+      "related_ids": [],
+      "technician_id": "TECH-03",
+      "status": "Resolved",
+      "reports": 1,
+      "created_at": "2026-10-13T09:00:00+00:00"
+    },
+    {
+      "id": "LF-009",
+      "lab": "Lab 2",
+      "equipment": "PC-09",
+      "category": "hardware",
+      "description": "Synthetic hardware issue on PC-09",
+      "priority": "Medium",
+      "kind": "ticket",
+      "related_ids": [],
+      "technician_id": "TECH-02",
+      "status": "Resolved",
+      "reports": 1,
+      "created_at": "2026-10-13T09:00:00+00:00"
+    },
+    {
+      "id": "LF-010",
+      "lab": "Lab 2",
+      "equipment": "PC-10",
+      "category": "display",
+      "description": "Synthetic display issue on PC-10",
+      "priority": "Medium",
+      "kind": "ticket",
+      "related_ids": [],
+      "technician_id": "TECH-02",
+      "status": "Resolved",
+      "reports": 1,
+      "created_at": "2026-10-13T09:00:00+00:00"
+    },
+    {
+      "id": "LF-011",
+      "lab": "Lab 2",
+      "equipment": "PC-11",
+      "category": "network",
+      "description": "Synthetic network issue on PC-11",
+      "priority": "Medium",
+      "kind": "ticket",
+      "related_ids": [],
+      "technician_id": "TECH-01",
+      "status": "Resolved",
+      "reports": 1,
+      "created_at": "2026-10-13T09:00:00+00:00"
+    },
+    {
+      "id": "LF-012",
+      "lab": "Lab 2",
+      "equipment": "PC-12",
+      "category": "network",
+      "description": "Synthetic network issue on PC-12",
+      "priority": "Medium",
+      "kind": "ticket",
+      "related_ids": [],
+      "technician_id": "TECH-01",
+      "status": "Resolved",
+      "reports": 1,
+      "created_at": "2026-10-13T09:00:00+00:00"
+    },
+    {
+      "id": "LF-013",
+      "lab": "Lab 2",
+      "equipment": "PC-13",
+      "category": "software",
+      "description": "Synthetic software issue on PC-13",
+      "priority": "Medium",
+      "kind": "ticket",
+      "related_ids": [],
+      "technician_id": "TECH-03",
+      "status": "Resolved",
+      "reports": 1,
+      "created_at": "2026-10-13T09:00:00+00:00"
+    },
+    {
+      "id": "LF-014",
+      "lab": "Lab 2",
+      "equipment": "PC-14",
+      "category": "hardware",
+      "description": "Synthetic hardware issue on PC-14",
+      "priority": "Medium",
+      "kind": "ticket",
+      "related_ids": [],
+      "technician_id": "TECH-02",
+      "status": "Resolved",
+      "reports": 1,
+      "created_at": "2026-10-13T09:00:00+00:00"
+    },
+    {
+      "id": "LF-015",
+      "lab": "Lab 2",
+      "equipment": "PC-15",
+      "category": "display",
+      "description": "Synthetic display issue on PC-15",
+      "priority": "Medium",
+      "kind": "ticket",
+      "related_ids": [],
+      "technician_id": "TECH-02",
+      "status": "Resolved",
+      "reports": 1,
+      "created_at": "2026-10-13T09:00:00+00:00"
+    },
+    {
+      "id": "LF-016",
+      "lab": "Lab 1",
+      "equipment": "PC-01",
+      "category": "network",
+      "description": "Synthetic network issue on PC-01",
+      "priority": "Medium",
+      "kind": "ticket",
+      "related_ids": [],
+      "technician_id": "TECH-01",
+      "status": "Resolved",
+      "reports": 1,
+      "created_at": "2026-10-13T09:00:00+00:00"
+    },
+    {
+      "id": "LF-017",
+      "lab": "Lab 1",
+      "equipment": "PC-02",
+      "category": "network",
+      "description": "Synthetic network issue on PC-02",
+      "priority": "Medium",
+      "kind": "ticket",
+      "related_ids": [],
+      "technician_id": "TECH-01",
+      "status": "Resolved",
+      "reports": 1,
+      "created_at": "2026-10-13T09:00:00+00:00"
+    },
+    {
+      "id": "LF-018",
+      "lab": "Lab 1",
+      "equipment": "PC-03",
+      "category": "software",
+      "description": "Synthetic software issue on PC-03",
+      "priority": "Medium",
+      "kind": "ticket",
+      "related_ids": [],
+      "technician_id": "TECH-03",
+      "status": "Resolved",
+      "reports": 1,
+      "created_at": "2026-10-13T09:00:00+00:00"
+    },
+    {
+      "id": "LF-019",
+      "lab": "Lab 1",
+      "equipment": "PC-04",
+      "category": "hardware",
+      "description": "Synthetic hardware issue on PC-04",
+      "priority": "Medium",
+      "kind": "ticket",
+      "related_ids": [],
+      "technician_id": "TECH-02",
+      "status": "Resolved",
+      "reports": 1,
+      "created_at": "2026-10-13T09:00:00+00:00"
+    },
+    {
+      "id": "LF-020",
+      "lab": "Lab 1",
+      "equipment": "PC-05",
+      "category": "display",
+      "description": "Synthetic display issue on PC-05",
+      "priority": "Medium",
+      "kind": "ticket",
+      "related_ids": [],
+      "technician_id": "TECH-02",
+      "status": "Resolved",
+      "reports": 1,
+      "created_at": "2026-10-13T09:00:00+00:00"
+    }
+  ],
+  "audit": []
+}
