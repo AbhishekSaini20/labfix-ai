@@ -247,6 +247,40 @@ with flow_tab:
         st.caption(
             f"Mode: {state['mode']} · Status: {state['status']} · Attempts: {state['attempts']}"
         )
+        
+        st.subheader("Agent execution overview")
+
+        agent_names = [
+            "Planner",
+            "Investigation",
+            "Executor",
+            "Critic",
+        ]
+
+        agent_columns = st.columns(4)
+
+        for agent_name, agent_col in zip(
+            agent_names, agent_columns
+        ):
+            matching_steps = [
+                event
+                for event in state["trace"]
+                if event["agent"] == agent_name
+            ]
+
+            with agent_col:
+                with st.container(border=True):
+                    st.markdown(f"**{agent_name}**")
+
+                    if matching_steps:
+                        latest = matching_steps[-1]
+                        st.caption(
+                            f"Steps recorded: {len(matching_steps)}"
+                        )
+                        st.write(latest["action"])
+                    else:
+                        st.caption("No step recorded")
+
         for e in state["trace"]:
             with st.expander(
                 f"{e['step']:02d}  {e['agent']} — {e['action']}",
