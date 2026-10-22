@@ -260,7 +260,30 @@ with flow_tab:
             "application/json",
         )
 with dashboard_tab:
-    status = st.selectbox("Filter status", ["All", "Open", "In progress", "Resolved"])
+    st.subheader("Maintenance ticket dashboard")
+
+    search_text = st.text_input(
+        "Search tickets",
+        placeholder="Search by ticket ID, equipment or category",
+        key="dashboard_search",
+    )
+
+    filter_col1, filter_col2 = st.columns(2)
+
+    with filter_col1:
+        status = st.selectbox(
+            "Filter status",
+            ["All", "Open", "In progress", "Resolved"],
+            key="dashboard_status",
+        )
+
+    with filter_col2:
+        priority_filter = st.selectbox(
+            "Filter priority",
+            ["All", "High", "Medium"],
+            key="dashboard_priority",
+        )
+
     fields = [
         "id",
         "lab",
@@ -272,11 +295,34 @@ with dashboard_tab:
         "technician_id",
         "reports",
     ]
+
+    search_term = search_text.strip().lower()
+
     rows = [
         {k: t.get(k) for k in fields}
         for t in data["tickets"]
-        if status == "All" or t["status"] == status
+        if (
+            status == "All" or t["status"] == status
+        )
+        and (
+            priority_filter == "All"
+            or t["priority"] == priority_filter
+        )
+        and (
+            search_term in (
+                str(t.get("id", ""))
+                + " "
+                + str(t.get("equipment", ""))
+                + " "
+                + str(t.get("category", ""))
+                + " "
+                + str(t.get("lab", ""))
+            ).lower()
+        )
     ]
+
+    st.caption(f"Showing {len(rows)} matching tickets")
+
     st.dataframe(rows, width="stretch", hide_index=True)
     output = io.StringIO()
     writer = csv.DictWriter(output, fieldnames=fields)
