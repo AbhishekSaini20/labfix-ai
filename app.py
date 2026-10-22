@@ -11,12 +11,57 @@ from labfix.storage import Store
 
 ROOT = Path(__file__).resolve().parent
 st.set_page_config(page_title="LabFix AI", page_icon="🛠️", layout="wide")
+
 st.markdown(
-    """<style>.stApp {background:#f6f8fc;} h1,h2,h3 {color:#12213b;}
-[data-testid="stMetric"] {background:white;border:1px solid #dce4ef;border-radius:12px;padding:16px;}
-[data-testid="stSidebar"] {background:#eaf0f8;}</style>""",
+    """
+    <style>
+    .stApp {
+        background: #F4F7FB;
+        color: #172B4D;
+    }
+
+    .block-container {
+        max-width: 1450px;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    h1, h2, h3 {
+        color: #142B4E;
+        font-weight: 700;
+    }
+
+    [data-testid="stMetric"] {
+        background: white;
+        border: 1px solid #DCE5F0;
+        border-radius: 14px;
+        padding: 18px;
+        box-shadow: 0 2px 8px rgba(20, 40, 80, 0.05);
+    }
+
+    [data-testid="stSidebar"] {
+        background: #EAF0F8;
+    }
+
+    .stButton > button {
+        border-radius: 9px;
+        min-height: 42px;
+        font-weight: 600;
+    }
+
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 12px;
+    }
+
+    .stTabs [data-baseweb="tab"] {
+        border-radius: 8px;
+        padding: 10px 16px;
+    }
+    </style>
+    """,
     unsafe_allow_html=True,
 )
+
 store = Store(os.environ.get("LABFIX_DB", str(ROOT / "runtime" / "labfix.db")))
 data, revision = store.snapshot()
 tech_names = {t["id"]: t["name"] for t in data["technicians"]}
